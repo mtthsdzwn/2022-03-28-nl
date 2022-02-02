@@ -17,6 +17,7 @@ UNWANTED_FILES = [
     '.nojekyll'
 ]
 
+
 def read_markdown(parser, path):
     """
     Get YAML and AST for Markdown file, returning

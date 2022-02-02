@@ -162,7 +162,6 @@ def main():
 
     return
 
-
 def parse_args():
     """Parse command-line arguments."""
 
@@ -197,6 +196,7 @@ def parse_args():
 
     args, extras = parser.parse_known_args()
     require(args.parser is not None,
+
             'Path to Markdown parser not provided',
             True)
     require(not extras,
@@ -246,6 +246,7 @@ def read_references(reporter, ref_path):
     {symbolic_name : URL}
     """
 
+
     if 'remote_theme' in CONFIG:
         return {}
 
@@ -257,6 +258,7 @@ def read_references(reporter, ref_path):
 
     with open(ref_path, 'r', encoding='utf-8') as reader:
         for (num, line) in enumerate(reader, 1):
+
 
             # Skip empty lines
             if len(line.strip()) == 0:
@@ -407,6 +409,7 @@ class CheckBase:
         """Check the raw text of the lesson body."""
 
         if self.args.line_lengths:
+
             over_limit = []
 
             for (i, l, n) in self.lines:
@@ -447,6 +450,7 @@ class CheckBase:
 
         for node in self.find_all(self.doc, {'type': 'codeblock'}):
             cls = self.get_val(node, 'attr', 'class')
+
             self.reporter.check(cls is not None and (cls in KNOWN_CODEBLOCKS or
                 cls.startswith('language-')),
                                 (self.filename, self.get_loc(node)),
