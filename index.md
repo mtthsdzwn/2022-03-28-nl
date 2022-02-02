@@ -9,7 +9,7 @@ country: "nl"      # lowercase two-letter ISO country code such as "fr" (see htt
 language: "nl"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: "0"        # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: "0"       # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "Mar 28-29 & Apr 4-5,2022"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humandate: "Mar 28-29 & Apr 4-5, 2022"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "09:00-12:00"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2022-03-28      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2022-04-05        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
@@ -133,8 +133,8 @@ address.
 </p>
 {% elsif online == "true_private" %}
 <p id="where">
-  <strong>Waar:</strong> This training will take place online.
-  The instructors will provide you with the information you will need to connect to this meeting.
+  <strong>Waar:</strong> Deze workshop vind online plaats.
+  Informatie om deel te kunnen nemen volgt later.
 </p>
 {% endif %}
 
@@ -145,9 +145,8 @@ This block displays the date and links to Google Calendar.
 {% endcomment %}
 {% if page.humandate %}
 <p id="when">
-  <strong>When:</strong>
-  {{page.humandate}}.
-  {% include workshop_calendar.html %}
+  <strong>Wanneer:</strong>
+  {{page.humandate}} (vier ochtenden).
 </p>
 {% endif %}
 
@@ -162,10 +161,9 @@ Modify the block below if there are any special requirements.
     Participants must bring a laptop with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+  Om deel te nemen moet je een computer kunnen gebruiken met een Mac, Linux, of Windows besturingssysteem. Een tablet, Chromebook, etc., werkt niet goed. Je moet rechten hebben om software op de computer te installeren.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Voorafgaand aan de cursus vragen we je om een bepaalde software te installeren (zie <a href="#setup">hieronder</a>).
 </p>
 
 {% comment %}
@@ -193,9 +191,9 @@ special instructions.
   attempt to provide them.
 </p>
 {% else %}
-  We are dedicated to providing a positive and accessible learning environment for all. Please
-  notify the instructors in advance of the workshop if you require any accommodations or if there is
-  anything we can do to make this workshop more accessible to you.
+  We doen ons best om deze workshop voor iedereen toegankelijk te maken.
+
+Het lesmateriaal wordt voor het begin van de workshop beschikbaar gemaakt. Als op andere manieren het leren kan worden ondersteund, kan de organisatie proberen om dat te faciliteren. Neem daarvoor tijdig contact op. 
 </p>
 {% endif %}
 
@@ -206,28 +204,27 @@ Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
   <strong>Contact:</strong>
-  Please email
+  Neem contact op met
   {% if page.email %}
   {% for email in page.email %}
   {% if forloop.last and page.email.size > 1 %}
-  or
+  of
   {% else %}
   {% unless forloop.first %}
   ,
   {% endunless %}
   {% endif %}
-  <a href='mailto:{{email}}'>{{email}}</a>
+  <a href='mailto:{{ email }}'>{{ page.instructor[forloop.index0] }}</a>
   {% endfor %}
   {% else %}
   to-be-announced
   {% endif %}
-  for more information.
-</p>
+  voor meer informatie.</p>
 
 <p id="roles">
-  <strong>Roles:</strong>
-  To learn more about the roles at the workshop (who will be doing what),
-  refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">our Workshop FAQ</a>.
+  <strong>Rollen:</strong>
+  Om meer te weten te komen over de verschillende rollen tijdens de workshop (wie doet wat) kun je de 
+  <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">Workshop FAQ</a> bekijken.
 </p>
 
 {% comment %}
@@ -256,15 +253,15 @@ Edit the text to match who can attend the workshop. For instance:
 {% comment%}
 CODE OF CONDUCT
 {% endcomment %}
-<h2 id="code-of-conduct">Code of Conduct</h2>
+<h2 id="code-of-conduct">Gedragscode</h2>
 
 <p>
-Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+Iedereen die deelneemt aan een activiteit van de Carpentries verplicht zich er toe zich te conformeren aan de <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Gedragscode</a> ("Code of Conduct", alleen in het Engels beschikbaar). Die gedragscode beschrijft ook hoe incidenten kunnen worden gemeld.
 </p>
 
 <p class="text-center">
   <a href="https://goo.gl/forms/KoUfO53Za3apOuOK2">
-    <button type="button" class="btn btn-info">Report a Code of Conduct Incident</button>
+    <button type="button" class="btn btn-info">Rapporteer een Code of Conduct Incident</button>
   </a>
 </p>
 <hr/>
@@ -284,20 +281,19 @@ Note we also have a CodiMD (the open-source version of HackMD)
 available at https://codimd.carpentries.org
 {% endcomment %}
 {% if page.collaborative_notes %}
-<h2 id="collaborative_notes">Collaborative Notes</h2>
+<h2 id="collaborative_notes">Samenwerking</h2>
 
 <p>
-We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
+We zullen <a href="{{page.collaborative_notes}}">deze samenwerkingsomgeving</a> gebruiken voor overleg, notities, het delen van URLs en korte stukjes computercode.
 </p>
 <hr/>
 {% endif %}
-
 
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
+<p>Vul deze vragenlijsten in vóór en na de workshop.</p>
 {% if site.carpentry == "incubator" %}
 <p><a href="{{ site.incubator_pre_survey }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.incubator_post_survey }}">Post-workshop Survey</a></p>
@@ -381,7 +377,7 @@ please preview your site before committing, and make sure to run
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in a
+  Om deel te nemen aan een
   {% if site.carpentry == "swc" %}
   Software Carpentry
   {% elsif site.carpentry == "dc" %}
@@ -390,13 +386,11 @@ please preview your site before committing, and make sure to run
   Library Carpentry
   {% endif %}
   workshop,
-  you will need access to software as described below.
-  In addition, you will need an up-to-date web browser.
+  is het nodig dat je software kunt gebruiken zoals hieronder beschreven.
+  Je hebt ok een moderne webbrowser nodig.
 </p>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+  Op de <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki pagina</a> houden we een lijst bij van problemen die vaak voorkomen bij installatie van deze software.  
 </p>
 
 {% comment %}
@@ -407,7 +401,7 @@ For online workshops, the section below provides:
 
 If you do not use Zoom for your online workshop, edit the file
 `_includes/install_instructions/videoconferencing.html`
-to include the relevant installation instrucctions.
+to include the relevant installation instructions.
 {% endcomment %}
 {% if online != "false" %}
 {% include install_instructions/videoconferencing.html %}
