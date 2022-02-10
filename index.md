@@ -156,7 +156,7 @@ SPECIAL REQUIREMENTS
 Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
-  <strong>Requirements:</strong>
+  <strong>Vereisten:</strong>
   {% if online == "false" %}
     Participants must bring a laptop with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
@@ -173,7 +173,7 @@ Modify the block below if there are any barriers to accessibility or
 special instructions.
 {% endcomment %}
 <p id="accessibility">
-  <strong>Accessibility:</strong>
+  <strong>Toegankelijkheid:</strong>
 {% if online == "false" %}
   We are committed to making this workshop
   accessible to everybody.  For workshops at a physical location, the workshop organizers have checked that:
@@ -336,7 +336,7 @@ of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
-<h2 id="schedule">Schedule</h2>
+<h2 id="schedule">Programma</h2>
 
 {% if site.carpentry == "swc" %}
 {% include swc/schedule.html %}
