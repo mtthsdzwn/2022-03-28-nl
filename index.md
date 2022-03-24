@@ -387,7 +387,7 @@ please preview your site before committing, and make sure to run
   {% endif %}
   workshop,
   is het nodig dat je software kunt gebruiken zoals hieronder beschreven.
-  Je hebt ok een moderne webbrowser nodig.
+  Je hebt ook een moderne webbrowser nodig.
 </p>
 <p>
   Op de <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki pagina</a> houden we een lijst bij van problemen die vaak voorkomen bij installatie van deze software.  
