@@ -193,7 +193,7 @@ special instructions.
 {% else %}
   We doen ons best om deze workshop voor iedereen toegankelijk te maken.
 
-Het lesmateriaal wordt voor het begin van de workshop beschikbaar gemaakt. Als op andere manieren het leren kan worden ondersteund, kan de organisatie proberen om dat te faciliteren. Neem daarvoor tijdig contact op. 
+Het lesmateriaal wordt voor het begin van de workshop beschikbaar gemaakt. Als op andere manieren het leren kan worden ondersteund, kan de organisatie proberen om dat te faciliteren. Neem daarvoor tijdig contact op.
 </p>
 {% endif %}
 
@@ -223,7 +223,7 @@ Display the contact email address set in the configuration file.
 
 <p id="roles">
   <strong>Rollen:</strong>
-  Om meer te weten te komen over de verschillende rollen tijdens de workshop (wie doet wat) kun je de 
+  Om meer te weten te komen over de verschillende rollen tijdens de workshop (wie doet wat) kun je de
   <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">Workshop FAQ</a> bekijken.
 </p>
 
@@ -390,7 +390,7 @@ please preview your site before committing, and make sure to run
   Je hebt ook een moderne webbrowser nodig.
 </p>
 <p>
-  Op de <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki pagina</a> houden we een lijst bij van problemen die vaak voorkomen bij installatie van deze software.  
+  Op de <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki pagina</a> houden we een lijst bij van problemen die vaak voorkomen bij installatie van deze software.
 </p>
 
 {% comment %}
